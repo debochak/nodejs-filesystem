@@ -29,9 +29,6 @@ app.post('/files', (req,res)=>{
 app.get('/files', (req,res)=>{
     fs.readdir(path,(err,files)=>{
         if(err) throw err;
-        // for (var i in files){
-            // res.write(`<li>${files[i]}</li>`)
-            // res.write("hello")
             res.status(200).json(files)
         // }
     })
