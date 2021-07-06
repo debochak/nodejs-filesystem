@@ -6,21 +6,21 @@ app.use(express.json());
 
 
 const fs = require("fs")
-const path = "https://github.com/debochak/nodejs-filesystem.git"
+const path = "/Users/debo/Documents/Guvi/Node/Task/FileSystem/"
 
 var timestamp = new Date().toTimeString();
 var date = new Date().toString();
 
-var filename = path+date;
+var filename = path+date+'.txt';
 console.log(filename);
 
-fs.readdir(path, (err, files)=>{
-    if(err) throw err;
-    console.log(files);
-})
+// fs.readdir(path, (err, files)=>{
+//     if(err) throw err;
+//     console.log(files);
+// })
 
 app.post('/files', (req,res)=>{
-    fs.writeFile(date,timestamp,(err)=>{
+    fs.writeFile(filename,timestamp,(err)=>{
         if(err) throw err;
         res.status(200).send(`new file created with name "${date}" and content "${timestamp}"`)
     })
@@ -29,7 +29,7 @@ app.post('/files', (req,res)=>{
 app.get('/files', (req,res)=>{
     fs.readdir(path,(err,files)=>{
         if(err) throw err;
-            res.status(200).json(files)
+            res.status(200).json(files) //ask the query of how to use this multiple times
         // }
     })
 });
