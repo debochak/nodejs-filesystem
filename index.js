@@ -6,7 +6,7 @@ app.use(express.json());
 
 
 const fs = require("fs")
-const path = "/Users/debo/Documents/Guvi/Node/Task/FileSystem"
+const path = "https://github.com/debochak/temp.git"
 
 var timestamp = new Date().toTimeString();
 var date = new Date().toString();
