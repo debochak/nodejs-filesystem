@@ -35,7 +35,7 @@ app.get('/files', (req,res)=>{
 });
 
 app.get('/', (req,res)=>{
-    res.send("This is my home page for my filesystem API")
+    res.send("This is my home page for my filesystem API. Use /files for get and push operations")
 });
 
 app.listen((port),()=>{
